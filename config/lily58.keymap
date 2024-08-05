@@ -12,6 +12,17 @@
     keymap {
         compatible = "zmk,keymap";
 
+        mac_layer {
+            display-name = "Mac";
+            bindings = <
+&gresc     &kp N1  &kp N2  &kp N3  &kp N4        &kp N5                                &kp N6  &kp N7      &kp N8        &kp N9   &kp N0    &kp BACKSPACE
+&kp TAB    &kp Q   &kp W   &kp E   &kp R         &kp T                                 &kp Y   &kp U       &kp I         &kp O    &kp P     &kp BACKSLASH
+&kp LCTRL  &kp A   &kp S   &kp D   &kp F         &kp G                                 &kp H   &kp J       &kp K         &kp L    &kp SEMI  &kp ENTER
+&kp LSHFT  &kp Z   &kp X   &kp C   &kp V         &kp B         &kp LBKT     &kp RBKT   &kp N   &kp M       &kp COMMA     &kp DOT  &kp FSLH  &kp SQT
+                           &trans  &kp LEFT_ALT  &kp LEFT_GUI  &kp SPACE    &kp SPACE  &mo 2   &kp DELETE  &kp CAPSLOCK
+            >;
+        };
+
         win_layer {
             // ------------------------------------------------------------------------------------------------------------
             // |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
@@ -22,22 +33,11 @@
 
             display-name = "Windows";
             bindings = <
-&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                                &kp N6  &kp N7      &kp N8        &kp N9   &kp N0    &kp BACKSPACE
-&kp TAB    &kp Q   &kp W   &kp E   &kp R   &kp T                                 &kp Y   &kp U       &kp I         &kp O    &kp P     &kp BACKSLASH
-&kp LCTRL  &kp A   &kp S   &kp D   &kp F   &kp G                                 &kp H   &kp J       &kp K         &kp L    &kp SEMI  &kp ENTER
-&kp LSHFT  &kp Z   &kp X   &kp C   &kp V   &kp B         &kp LBKT     &kp RBKT   &kp N   &kp M       &kp COMMA     &kp DOT  &kp FSLH  &kp SQT
-                           &tog 1  &mo 2   &kp LEFT_ALT  &kp SPACE    &kp SPACE  &mo 2   &kp DELETE  &kp CAPSLOCK
-            >;
-        };
-
-        mac_layer {
-            display-name = "Mac";
-            bindings = <
-&gresc     &kp N1  &kp N2  &kp N3  &kp N4        &kp N5                                &kp N6  &kp N7      &kp N8        &kp N9   &kp N0    &kp BACKSPACE
+&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4        &kp N5                                &kp N6  &kp N7      &kp N8        &kp N9   &kp N0    &kp BACKSPACE
 &kp TAB    &kp Q   &kp W   &kp E   &kp R         &kp T                                 &kp Y   &kp U       &kp I         &kp O    &kp P     &kp BACKSLASH
 &kp LCTRL  &kp A   &kp S   &kp D   &kp F         &kp G                                 &kp H   &kp J       &kp K         &kp L    &kp SEMI  &kp ENTER
 &kp LSHFT  &kp Z   &kp X   &kp C   &kp V         &kp B         &kp LBKT     &kp RBKT   &kp N   &kp M       &kp COMMA     &kp DOT  &kp FSLH  &kp SQT
-                           &trans  &kp LEFT_ALT  &kp LEFT_GUI  &kp SPACE    &kp SPACE  &mo 2   &kp DELETE  &kp CAPSLOCK
+                           &tog 0  &kp LEFT_ALT  &kp LEFT_ALT  &kp SPACE    &kp SPACE  &mo 2   &kp DELETE  &kp CAPSLOCK
             >;
         };
 
@@ -52,8 +52,8 @@
             display-name = "mods";
             bindings = <
 &soft_off   &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                                  &kp F6       &kp F7          &kp F8             &kp F9           &kp MINUS  &kp EQUAL
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                            &kp F7       &kp DEL         &kp UP_ARROW       &kp HOME         &kp F11    &kp F12
-&kp LCTRL   &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &bootloader                             &bootloader  &kp LEFT_ARROW  &kp DOWN_ARROW     &kp RIGHT_ARROW  &kp RPAR   &kp TILDE
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                            &kp F7       &kp DEL         &kp UP_ARROW       &kp F10          &kp F11    &kp F12
+&trans      &kp EXCL      &kp AT        &kp HASH      &kp DOLLAR    &bootloader                             &bootloader  &kp LEFT_ARROW  &kp DOWN_ARROW     &kp RIGHT_ARROW  &kp RPAR   &kp TILDE
 &trans      &trans        &trans        &trans        &trans        &trans        &sys_reset    &sys_reset  &trans       &kp F6          &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp RBRC   &sys_reset
                                         &trans        &trans        &trans        &trans        &trans      &trans       &trans          &trans
             >;
