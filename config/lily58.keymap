@@ -24,6 +24,8 @@
             label = "TD_ESC_GRAVE_TILDE";
             #binding-cells = <0>;
             bindings = <&kp ESCAPE>, <&kp GRAVE>, <&kp TILDE>;
+
+            tapping-term-ms = <300>;
         };
     };
 
